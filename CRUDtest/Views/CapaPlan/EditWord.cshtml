@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Chỉnh sửa nội dung Word";
+}
+<h2>Chỉnh sửa nội dung Word</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+else
+{
+    <form asp-action="SaveEditedWord" method="post">
+        <textarea id="EditedHtml" name="editedHtml" rows="20" style="width: 100%;">@Html.Raw(ViewBag.DocumentHtml)</textarea>
+        <br />
+        <button type="submit" class="btn btn-success">Lưu và tải xuống</button>
+        <a asp-action="Index" class="btn btn-secondary">Không lưu</a>
+    </form>
+}
+
+@section Scripts {
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('EditedHtml');
+    </script>
+}

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CRUDtest.Models.Student>
+
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Subscribed</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => student.Name)</td>
+                <td>@Html.DisplayFor(modelItem => student.Email)</td>
+                <td>@Html.DisplayFor(modelItem => student.Phone)</td>
+                <td>@Html.DisplayFor(modelItem => student.Subscribed)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.Id">Edit</a> |
+                    @* <a asp-action="Details" asp-route-id="@student.Id">Details</a> | *@
+                    <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

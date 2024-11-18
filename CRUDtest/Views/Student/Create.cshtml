@@ -1,0 +1,42 @@
+﻿@model CRUDtest.Models.Student
+
+@{
+    ViewBag.Title = "Create Student";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone)
+        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Phone)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Subscribed)
+        @Html.CheckBoxFor(model => model.Subscribed)
+        @Html.ValidationMessageFor(model => model.Subscribed)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+}
+
+@* @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+} *@

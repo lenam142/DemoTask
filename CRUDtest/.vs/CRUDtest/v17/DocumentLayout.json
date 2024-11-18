@@ -1,0 +1,194 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\controllers\\capaplancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:controllers\\capaplancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\views\\capaplan\\editword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:views\\capaplan\\editword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\views\\capaplan\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:views\\capaplan\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\views\\capaplan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:views\\capaplan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|c:\\users\\admin\\source\\repos\\crudtest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{88C4B581-8337-4A5F-9E3D-A69F1740D33F}|CRUDtest.csproj|solutionrelative:wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CapaPlanController.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Controllers\\CapaPlanController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CapaPlanController.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Controllers\\CapaPlanController.cs",
+              "RelativeToolTip": "Controllers\\CapaPlanController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:48:34.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:48:15.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-17T15:45:14.763Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-17T15:45:04.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-17T15:45:01.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-17T15:44:58.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditWord.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\CapaPlan\\EditWord.cshtml",
+              "RelativeDocumentMoniker": "Views\\CapaPlan\\EditWord.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\CapaPlan\\EditWord.cshtml",
+              "RelativeToolTip": "Views\\CapaPlan\\EditWord.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-17T15:36:22.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\CapaPlan\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\CapaPlan\\Create.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\CapaPlan\\Create.cshtml",
+              "RelativeToolTip": "Views\\CapaPlan\\Create.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-17T15:36:14.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\CapaPlan\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\CapaPlan\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\Views\\CapaPlan\\Index.cshtml",
+              "RelativeToolTip": "Views\\CapaPlan\\Index.cshtml",
+              "ViewState": "AgIAAPIBAAAAAAAAAAAAAPsBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-17T15:36:12.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\CRUDtest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ViewState": "AgIAAIgCAAAAAAAAAAAAAIsCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-16T07:35:31.155Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+﻿@model CRUDtest.Models.CapaPlan
+
+@{
+    ViewData["Title"] = "Tạo Mới Kế Hoạch Khắc Phục, Ngăn Ngừa (CAPA)";
+}
+
+<h2>Tạo Mới Kế Hoạch Khắc Phục, Ngăn Ngừa (CAPA)</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Số Phiếu CAR</label>
+        <input asp-for="SoPhieuCAR" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Ngày Phát Hành Phiếu CAR</label>
+        <input asp-for="NgayPhatHanh" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Mô Tả Sự Không Phù Hợp</label>
+        <textarea asp-for="MoTaSuKPH" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Phân Tích Nguyên Nhân Gốc</label>
+        <textarea asp-for="PhanTichNguyenNhanGoc" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Khắc Phục</label>
+        <textarea asp-for="KhacPhuc" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Hành Động Ngăn Ngừa</label>
+        <textarea asp-for="HanhDongNguaNgua" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Ngày Hoàn Tất Dự Kiến</label>
+        <input asp-for="NgayHoanTatDuKien" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Xem Xét của CPL/QAD/HSE</label>
+        <input asp-for="XemXetCPLQADHSE" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Ngày Xem Xét</label>
+        <input asp-for="NgayXemXet" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+</form>

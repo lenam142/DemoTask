@@ -1,0 +1,564 @@
+﻿@model IEnumerable<CRUDtest.Models.CapaPlan>
+@* <h2>Danh sách CAPA Plans</h2>
+<div>
+    <form asp-action="GenerateWord" method="post">
+        <button type="submit" class="btn btn-primary">Tải về Word</button>
+    </form>
+
+    <form asp-action="EditWord" method="post">
+        <button type="submit" class="btn btn-secondary">Chỉnh sửa và tải về Word</button>
+    </form>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Số Phiếu CAR</th>
+            <th>Ngày phát hành Phiếu</th>
+            <th>Mô tả Sự KPH</th>
+            <th>Phân tích nguyên nhân gốc</th>
+            <th>Khắc phục</th>
+            <th>Hành động ngăn ngừa</th>
+            <th>Ngày hoàn tất dự kiến</th>
+            <th>Xem xét của CPL/QAD/HSE</th>
+            <th>Ngày xem xét</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.SoPhieuCAR</td>
+                <td>@item.NgayPhatHanh.ToString("dd/MM/yyyy")</td>
+                <td>@item.MoTaSuKPH</td>
+                <td>@item.PhanTichNguyenNhanGoc</td>
+                <td>@item.KhacPhuc</td>
+                <td>@item.HanhDongNguaNgua</td>
+                <td>@item.NgayHoanTatDuKien?.ToString("dd/MM/yyyy")</td>
+                <td>@item.XemXetCPLQADHSE</td>
+                <td>@item.NgayXemXet?.ToString("dd/MM/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table> *@
+@* fix bug *@
+@* <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>HT Quản Lý Chất Lượng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .top-bar {
+            background-color: #008ecc;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar, .doc-list-left, .doc-list-right {
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #f2f2f2;
+        }
+
+        .doc-list-left {
+            width: 30%;
+            border-right: 1px solid #ccc;
+        }
+
+        .doc-list-right {
+            flex: 1;
+        }
+
+        .handle {
+            width: 5px;
+            cursor: col-resize;
+            background-color: #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        li {
+            max-width: 90%;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+
+        li.expanded {
+            white-space: normal;
+        }
+
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer select,
+        .footer input {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top bar -->
+    <div class="top-bar">
+        <h2>HT Quản Lý Chất Lượng</h2>
+        <div>
+            <input type="text" placeholder="Tìm kiếm">
+            <button>Tài liệu</button>
+            <button>Print</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Sidebar for navigation -->
+        <div class="sidebar" id="sidebar">
+            <h3>Danh mục</h3>
+            <ul>
+                <li onclick="toggleExpand(this)">
+                    <input type="checkbox"> 1. Mục tiêu
+                    <ul>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 1.1 Tầm nhìn và sứ mệnh</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 1.2 Giá trị cốt lõi</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 1.3 Chiến lược</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 1.4 Mục tiêu kinh doanh</li>
+                    </ul>
+                </li>
+                <li onclick="toggleExpand(this)">
+                    <input type="checkbox"> 2. Tổ chức
+                    <ul>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 2.1 Sơ đồ tổ chức công ty</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 2.2 Quy chế hoạt động</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 2.3 Mô tả công việc</li>
+                    </ul>
+                </li>
+                <!-- More items here -->
+            </ul>
+        </div>
+
+        <!-- Content area -->
+        <div class="handle" id="handle-sidebar"></div>
+        <div class="doc-list">
+            <div class="doc-list-left" id="doc-list-left">
+                <h3>Danh sách tài liệu</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã tài liệu</th>
+                            <th>Tên tài liệu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thay đổi cơ bản</td>
+                            <td>Thay đổi cơ bản V15.06</td>
+                        </tr>
+                        <!-- More rows here -->
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button>Trước</button>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>Tiếp</button>
+                </div>
+            </div>
+            <div class="handle" id="handle1"></div>
+            <div class="doc-list-right" id="doc-list-right">
+                <h2>Danh sách CAPA Plans</h2>
+
+                <div>
+                    <form asp-action="GenerateWord" method="post">
+                        <button type="submit" class="btn btn-primary">Tải về Word</button>
+                    </form>
+
+                    <form asp-action="EditWord" method="post">
+                        <button type="submit" class="btn btn-secondary">Chỉnh sửa và tải về Word</button>
+                    </form>
+                </div>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Số Phiếu CAR</th>
+                            <th>Ngày phát hành Phiếu</th>
+                            <th>Mô tả Sự KPH</th>
+                            <th>Phân tích nguyên nhân gốc</th>
+                            <th>Khắc phục</th>
+                            <th>Hành động ngăn ngừa</th>
+                            <th>Ngày hoàn tất dự kiến</th>
+                            <th>Xem xét của CPL/QAD/HSE</th>
+                            <th>Ngày xem xét</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.SoPhieuCAR</td>
+                                <td>@item.NgayPhatHanh.ToString("dd/MM/yyyy")</td>
+                                <td>@item.MoTaSuKPH</td>
+                                <td>@item.PhanTichNguyenNhanGoc</td>
+                                <td>@item.KhacPhuc</td>
+                                <td>@item.HanhDongNguaNgua</td>
+                                <td>@item.NgayHoanTatDuKien?.ToString("dd/MM/yyyy")</td>
+                                <td>@item.XemXetCPLQADHSE</td>
+                                <td>@item.NgayXemXet?.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const handleSidebar = document.getElementById('handle-sidebar');
+        const handle1 = document.getElementById('handle1');
+        const sidebar = document.getElementById('sidebar');
+        const docListLeft = document.getElementById('doc-list-left');
+
+        function addSmoothDragging(handle, resizeFunction) {
+            handle.addEventListener('mousedown', function(e) {
+                e.preventDefault();
+                document.addEventListener('mousemove', resizeFunction);
+                document.addEventListener('mouseup', function() {
+                    document.removeEventListener('mousemove', resizeFunction);
+                });
+            });
+        }
+
+        function resizeSidebar(e) {
+            sidebar.style.width = e.pageX + 'px';
+        }
+
+        function resizePanels(e) {
+            docListLeft.style.width = (e.pageX - sidebar.offsetWidth - handleSidebar.offsetWidth) + 'px';
+        }
+
+        addSmoothDragging(handleSidebar, resizeSidebar);
+        addSmoothDragging(handle1, resizePanels);
+
+        function toggleExpand(element) {
+            element.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
+ *@
+@* 
+ fix *@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>HT Quản Lý Chất Lượng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .top-bar {
+            background-color: #008ecc;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar, .doc-list-left, .doc-list-right {
+            padding: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #f2f2f2;
+        }
+
+        .doc-list-left {
+            width: 30%;
+            border-right: 1px solid #ccc;
+        }
+
+        .doc-list-right {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .handle {
+            width: 5px;
+            cursor: col-resize;
+            background-color: #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        li {
+            max-width: 90%;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+
+            li.expanded {
+                white-space: normal;
+            }
+
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .footer select,
+            .footer input {
+                padding: 5px;
+            }
+
+        .doc-list-right .button-group {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            margin-right: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top bar -->
+    <div class="top-bar">
+        <h2>HT Quản Lý Chất Lượng</h2>
+        <div>
+            <input type="text" placeholder="Tìm kiếm">
+            <button>Tài liệu</button>
+            <button>Print</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Sidebar for navigation -->
+        <div class="sidebar" id="sidebar">
+            <h3>Danh mục</h3>
+            <ul>
+                <li onclick="toggleExpand(this)">
+                    <input type="checkbox"> 1. Mục tiêu
+                    <ul>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 1.1 Tầm nhìn và sứ mệnh</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 1.2 Giá trị cốt lõi</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 1.3 Chiến lược</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 1.4 Mục tiêu kinh doanh</li>
+                    </ul>
+                </li>
+                <li onclick="toggleExpand(this)">
+                    <input type="checkbox"> 2. Tổ chức
+                    <ul>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 2.1 Sơ đồ tổ chức công ty</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 2.2 Quy chế hoạt động</li>
+                        <li onclick="toggleExpand(this)"><input type="checkbox"> 2.3 Mô tả công việc</li>
+                    </ul>
+                </li>
+                <!-- More items here -->
+            </ul>
+        </div>
+
+        <!-- Content area -->
+        <div class="handle" id="handle-sidebar"></div>
+        <div class="doc-list">
+           @*  <div class="doc-list-left" id="doc-list-left">
+                <h3>Danh sách tài liệu</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Mã tài liệu</th>
+                            <th>Tên tài liệu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Thay đổi cơ bản</td>
+                            <td>Thay đổi cơ bản V15.06</td>
+                        </tr>
+                        <!-- More rows here -->
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button>Trước</button>
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>Tiếp</button>
+                </div>
+            </div> *@
+            @* <div class="handle" id="handle1"></div> *@
+            <div class="doc-list-right" id="doc-list-right">
+                <div class="button-group">
+                    <form asp-action="GenerateWord" method="post">
+                        <button type="submit" class="btn btn-primary">Tải về Word</button>
+                    </form>
+
+                    <form asp-action="EditWord" method="post">
+                        <button type="submit" class="btn btn-secondary">Chỉnh sửa và tải về Word</button>
+                    </form>
+                </div>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Số Phiếu CAR</th>
+                            <th>Ngày phát hành Phiếu</th>
+                            <th>Mô tả Sự KPH</th>
+                            <th>Phân tích nguyên nhân gốc</th>
+                            <th>Khắc phục</th>
+                            <th>Hành động ngăn ngừa</th>
+                            <th>Ngày hoàn tất dự kiến</th>
+                            <th>Xem xét của CPL/QAD/HSE</th>
+                            <th>Ngày xem xét</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.SoPhieuCAR</td>
+                                <td>@item.NgayPhatHanh.ToString("dd/MM/yyyy")</td>
+                                <td>@item.MoTaSuKPH</td>
+                                <td>@item.PhanTichNguyenNhanGoc</td>
+                                <td>@item.KhacPhuc</td>
+                                <td>@item.HanhDongNguaNgua</td>
+                                <td>@item.NgayHoanTatDuKien?.ToString("dd/MM/yyyy")</td>
+                                <td>@item.XemXetCPLQADHSE</td>
+                                <td>@item.NgayXemXet?.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const handleSidebar = document.getElementById('handle-sidebar');
+        const handle1 = document.getElementById('handle1');
+        const sidebar = document.getElementById('sidebar');
+        const docListLeft = document.getElementById('doc-list-left');
+
+        function addSmoothDragging(handle, resizeFunction) {
+            handle.addEventListener('mousedown', function (e) {
+                e.preventDefault();
+                document.addEventListener('mousemove', resizeFunction);
+                document.addEventListener('mouseup', function () {
+                    document.removeEventListener('mousemove', resizeFunction);
+                });
+            });
+        }
+
+        function resizeSidebar(e) {
+            sidebar.style.width = e.pageX + 'px';
+        }
+
+        function resizePanels(e) {
+            docListLeft.style.width = (e.pageX - sidebar.offsetWidth - handleSidebar.offsetWidth) + 'px';
+        }
+
+        addSmoothDragging(handleSidebar, resizeSidebar);
+        addSmoothDragging(handle1, resizePanels);
+
+        function toggleExpand(element) {
+            element.classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
